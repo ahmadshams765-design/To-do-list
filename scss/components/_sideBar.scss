@@ -1,0 +1,11 @@
+@use './abstracts/mixins' as *;
+@use './abstracts/variables'  as *;
+
+.side-bar{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 250px;
+    background-color: red;
+    height: 100vh;
+}
