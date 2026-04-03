@@ -1,0 +1,197 @@
+@use '../abstracts/mixins' as * ;
+/*start flex */
+.d-flex {
+    display: flex;
+}
+.flex-c {
+    justify-content: center;
+    align-items: center;
+}
+.flex-column {
+    flex-direction: column;
+    
+}
+.space-between{
+  justify-content: space-between;
+  align-items: center;
+}
+.align-c{
+  align-items: center;
+}
+/*end flex */
+
+.bg-grey{
+  background-color: grey;
+
+}
+.c-grey{
+  color: grey;
+
+}
+.c-white{
+  color: white;
+}
+.gap-20{
+  gap: 20px;
+}
+.gap-40{
+  gap: 40px;
+}
+.bg-white{
+  background-color: white;
+}
+/* start margin and padding */
+
+$spacings: 0, 5, 10, 15, 20, 30, 40, 50;
+
+@each $m in $spacings {
+  .m-#{$m} {
+    margin: #{$m}px;
+  }
+
+  .mt-#{$m} {
+    margin-top: #{$m}px;
+  }
+
+  .mr-#{$m} {
+    margin-right: #{$m}px;
+  }
+
+  .mb-#{$m} {
+    margin-bottom: #{$m}px;
+  }
+
+  .ml-#{$m} {
+    margin-left: #{$m}px;
+  }
+}
+
+@each $pad in $spacings {
+  .p-#{$pad} {
+    padding: #{$pad}px;
+  }
+
+  .pt-#{$pad} {
+    padding-top: #{$pad}px;
+  }
+
+  .pr-#{$pad} {
+    padding-right: #{$pad}px;
+  }
+
+  .pb-#{$pad} {
+    padding-bottom: #{$pad}px;
+  }
+
+  .pl-#{$pad} {
+    padding-left: #{$pad}px;
+  }
+}
+
+
+ /* start margin and padding */
+
+ /* colors */
+ $colors: (
+  "primary": #007bff,
+  "secondary": #6c757d,
+  "success": #28a745,
+  "danger": #dc3545,
+  "warning": #ffc107,
+  "info": #17a2b8,
+  "dark": #343a40,
+  "light": #f8f9fa ,
+  "light2": #f7f7f7 
+);
+
+:root{
+     @each $name, $color in $colors {
+  --bg-#{$name} :  #{$color} ; 
+  --text-#{$name} :  #{$color} ; 
+}
+--border-color : rgb(236, 236, 236) ;
+--bg-white : white ;
+--black : black ;
+--base-font : 16px ;
+--bg-main : #f1f5f9 ;
+--grey : grey ;
+}
+
+.bg-blue{
+  background-color: var(--bg-primary);
+}
+.bg-green{
+  background-color: var(--bg-success);
+}
+.bg-orange{
+  background-color: var(--bg-warning);
+}
+.bg-red{
+  background-color: var(--bg-danger);
+}
+ /* colors */
+ /* position */
+ .pos-relative { position: relative; }
+.pos-absolute { position: absolute; }
+.pos-fixed    { position: fixed; }
+.pos-sticky   { position: sticky; }
+
+ /* position */
+ /*border radius */
+ $rds : 2 , 3 , 4 , 5 , 6 , 7 , 10;
+ @each $rd in $rds {
+    .rad-#{$rd} {
+        border-radius: #{$rd}px;
+    }
+ }
+ .rad-h{
+  border-radius: 50%;
+ }
+ /*border radius */
+
+ /* border */
+ .main-border {
+    border : 1px solid #ddd ;
+ }
+/* border */
+
+ /* width and height */
+ .w-full {
+    width: 100%;
+ }
+ .h-full {
+    height: 100%;
+ }
+ /* width */
+ /* shadow */
+ .main-shadow {
+    @include shadow(0 , 0 , 10px , #DDD)
+ }
+ /* shadow */
+ /*font size */
+ // مقاسات الخطوط اللي محتاجها
+$font-sizes: (
+  "xs": 12px,
+  "sm": 14px,
+  "base": 16px,
+  "lg": 18px,
+  "xl": 20px,
+  "2xl": 24px,
+  "3xl": 30px,
+  "4xl": 36px,
+  "5xl": 48px
+);
+
+@each $name, $size in $font-sizes {
+  .t-#{$name} {
+    font-size: $size;
+  }
+}
+
+.t-light {
+    font-weight: 400;
+}
+.t-bold {
+    font-weight: bold;
+}
+ /*font size */

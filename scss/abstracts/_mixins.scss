@@ -1,0 +1,65 @@
+@mixin break($point){
+    @if $point == mobile {
+        @media (max-width : 767px) {
+            @content
+        }
+    }
+   
+    @else if $point == small {
+        @media (min-width : 768px) and (max-width : 991px) {
+            @content
+        }
+    }
+    @else if $point == small2 {
+        @media  (max-width : 991px) {
+            @content
+        }
+    }
+    @else if $point == medium {
+        @media (min-width : 992px ) and (max-width : 1199px) {
+            @content
+        }
+    }
+    @else if $point == large {
+        @media (min-width : 1200px )  {
+            @content
+        }
+    }
+}
+
+@mixin centering(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin columns($min) {
+display: grid;
+grid-template-columns: repeat(auto-fill , minmax($min , 1fr));
+gap: 30px;
+}
+
+@mixin contMedia($width){
+    @if $width == small {
+        @media (min-width : 768px){
+        @content
+    }
+    }@else if $width == med {
+        @media (min-width : 992px){
+        @content
+    }
+    }@else if $width == large {
+        @media (min-width : 1200px){
+        @content
+    }
+    }
+}
+
+@mixin shadow($val1 , $val2 , $val3 , $color){
+    box-shadow: $val1 $val2 $val3 $color;
+}
