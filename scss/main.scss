@@ -3,6 +3,17 @@
 @use './layout/framework' as * ;
 @use './layout/global-rules' as * ;
 
+// font 
+
 
 // Start Heading 
 @use './components/sideBar' as * ;
+
+
+// Font 
+* , body{
+     font-family: "Cairo", sans-serif;
+
+
+
+}

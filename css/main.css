@@ -670,7 +670,131 @@ a {
   position: relative;
   left: 0;
   top: 0;
-  width: 250px;
-  background-color: red;
+  width: 300px;
+  background-color: rgb(241, 240, 247);
   height: 100vh;
+}
+.side-bar .side-head {
+  margin-bottom: 30px;
+}
+.side-bar .side-head .logo i {
+  color: white;
+  background-color: rgb(84, 92, 140);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 30px;
+}
+.side-bar .side-head .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.side-bar .side-head .text h3 {
+  font-size: 20px;
+}
+.side-bar .side-head .text p {
+  margin-top: -10px;
+}
+.side-bar ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+}
+.side-bar ul li {
+  padding: 10px;
+  border-radius: 7px;
+  margin: 5px 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.side-bar ul li:hover {
+  background-color: rgb(225, 225, 236);
+}
+.side-bar ul li:hover a {
+  color: rgb(84, 92, 140);
+}
+.side-bar ul li:hover a span {
+  color: rgb(84, 92, 140);
+}
+@media (max-width: 767px) {
+  .side-bar ul li:hover a span {
+    display: none;
+  }
+}
+.side-bar ul li:hover a i {
+  color: rgb(84, 92, 140);
+}
+.side-bar ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.side-bar ul li a i {
+  margin-right: 10px;
+  font-size: 20px;
+  color: rgb(94, 94, 94);
+}
+.side-bar ul li a span {
+  font-size: 16px;
+  color: rgb(94, 94, 94);
+}
+.side-bar .side-bottom {
+  padding: 10px;
+  border-radius: 7px;
+  margin: 5px 20px;
+  background-color: rgb(84, 92, 140);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 50px);
+  cursor: pointer;
+}
+.side-bar .side-bottom span {
+  font-size: 16px;
+}
+.side-bar .side-bottom i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  .side-bar {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+*, body {
+  font-family: "Cairo", sans-serif;
 }
