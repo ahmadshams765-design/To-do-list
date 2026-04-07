@@ -1,10 +1,14 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+
 @mixin break($point){
     @if $point == mobile {
         @media (max-width : 767px) {
             @content
         }
     }
-   
+
     @else if $point == small {
         @media (min-width : 768px) and (max-width : 991px) {
             @content
@@ -62,4 +66,21 @@ gap: 30px;
 
 @mixin shadow($val1 , $val2 , $val3 , $color){
     box-shadow: $val1 $val2 $val3 $color;
+}
+
+
+// added by me
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-center: center;
+}
+
+@mixin card-style{
+    background: $white;
+    border-radius: $radius-lg;
+    padding: 20px;
+    border: 1px solid transparent;
+    transition: $transition;
 }

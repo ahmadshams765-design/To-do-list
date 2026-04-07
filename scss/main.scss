@@ -4,6 +4,9 @@
 @use './layout/global-rules' as * ;
 
 
-// Start Heading 
+// Start side 
 @use './components/sideBar' as * ;
+
+//start header
+@use './components/header' as *;
 

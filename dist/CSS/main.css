@@ -1,39 +1,24 @@
 /*start flex */
 .d-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .flex-c {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-column {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .space-between {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .align-c {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 /*end flex */
@@ -498,8 +483,7 @@
 /* width */
 /* shadow */
 .main-shadow {
-  -webkit-box-shadow: 0 0 10px #DDD;
-          box-shadow: 0 0 10px #DDD;
+  box-shadow: 0 0 10px #DDD;
 }
 
 /* shadow */
@@ -551,9 +535,7 @@
 /*font size */
 /* start global rules */
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: 0.3s;
+  box-sizing: border-box;
   transition: 0.3s;
   font-style: normal;
 }
@@ -609,52 +591,20 @@ a {
     width: 1170px;
   }
 }
-@-webkit-keyframes up-and-down {
-  0% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
-  }
-  100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
 @keyframes up-and-down {
   0% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
+    transform: translateY(-5px);
   }
   100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
-@-webkit-keyframes bouncing {
-  0%, 10%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  40%, 60% {
-    -webkit-transform: translateY(-15px);
-            transform: translateY(-15px);
+    transform: translateY(0px);
   }
 }
 @keyframes bouncing {
   0%, 10%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
   40%, 60% {
-    -webkit-transform: translateY(-15px);
-            transform: translateY(-15px);
-  }
-}
-@-webkit-keyframes opacity {
-  0% {
-    background-color: white;
-  }
-  100% {
-    background-color: #007bff;
+    transform: translateY(-15px);
   }
 }
 @keyframes opacity {
@@ -674,16 +624,9 @@ a {
   background-color: rgb(241, 240, 247, var(--tw-bg-opacity, 1));
   height: 100vh;
   padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
@@ -723,10 +666,7 @@ a {
   border-radius: 12px;
   padding: 20px;
   border: 1px solid transparent;
-  -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 10px;
   margin-top: 20px;
@@ -736,18 +676,6 @@ a {
   border: none;
   outline: none;
   font-size: 0.9rem;
-}
-.header .search-bar input::-webkit-input-placeholder {
-  color: #7c829c;
-}
-.header .search-bar input::-moz-placeholder {
-  color: #7c829c;
-}
-.header .search-bar input:-ms-input-placeholder {
-  color: #7c829c;
-}
-.header .search-bar input::-ms-input-placeholder {
-  color: #7c829c;
 }
 .header .search-bar input::placeholder {
   color: #7c829c;
@@ -760,19 +688,14 @@ a {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
 .header .search-bar button.Add-Task:hover {
   opacity: 0.9;
 }
 .header .search-bar .today-button, .header .search-bar .priority-icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 8px;
   background: none;
   border: none;
@@ -781,17 +704,14 @@ a {
   font-weight: 600;
   cursor: pointer;
   padding: 5px 10px;
-  -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 .header .search-bar .today-button:hover, .header .search-bar .priority-icon:hover {
   color: rgb(84, 92, 140, var(--tw-bg-opacity, 1));
 }
 .header .search-bar .today-button svg, .header .search-bar .today-button div, .header .search-bar .priority-icon svg, .header .search-bar .priority-icon div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
+
+/*# sourceMappingURL=main.css.map */

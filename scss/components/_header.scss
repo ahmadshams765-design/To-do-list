@@ -1,0 +1,105 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables'  as *;
+@use'../abstracts/colors' as *;
+
+
+// .container{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: red;
+// }
+
+.header{
+    margin-bottom: 30px;
+
+    .search-container{
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .search-input{
+        width: 100%;
+        max-width: 400px;
+        padding: 10px 15px 10px 40px;
+        border: none;
+        border-radius: 10px;
+        background: $color-gray;
+    }
+
+    .search-icon{ 
+        position: absolute; //ask
+        left: 12px;
+        top: 8px;
+        color: $text-muted;  // ask
+    }
+
+    //good morning, alex
+    h1{
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 20px 0 5px;
+        color: $text-main;
+    }
+
+    p{
+        color: $text-muted;
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .search-bar{
+        @include card-style;
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        padding:10px 20px; 
+
+
+        input{
+           // flex: 1;
+            border:none;
+            outline: none;
+            font-size: 0.9rem;
+            &::placeholder{
+                color: $text-muted; // needs to be lighten
+            }
+        }
+
+        button.Add-Task{
+            background-color: $purple;
+            color: $white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: $border-radius-sm;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s ease;
+            &:hover{
+                opacity: 0.9;
+            }
+        }
+
+        .today-button, .priority-icon{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: none;
+            border: none;
+            color: rgb(94 94 104 / var(--tw-text-opacity, 1));
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: $transition;
+            &:hover{
+                color: $purple; 
+            }
+            svg, div{
+                display: flex;
+                align-items: center;
+            } //ask
+
+        }
+    }
+}

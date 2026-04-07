@@ -92,7 +92,7 @@ $spacings: 0, 5, 10, 15, 20, 30, 40, 50;
  /* start margin and padding */
 
  /* colors */
- $colors: (
+$colors: (
   "primary": #007bff,
   "secondary": #6c757d,
   "success": #28a745,
@@ -105,7 +105,7 @@ $spacings: 0, 5, 10, 15, 20, 30, 40, 50;
 );
 
 :root{
-     @each $name, $color in $colors {
+    @each $name, $color in $colors {
   --bg-#{$name} :  #{$color} ; 
   --text-#{$name} :  #{$color} ; 
 }
