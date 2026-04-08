@@ -3,13 +3,26 @@
 @use './layout/framework' as * ;
 @use './layout/global-rules' as * ;
 
+// font 
+
 
 // Start side 
 @use './components/sideBar' as * ;
 
+<<<<<<< HEAD
 //start header
 @use './components/header' as *;
 
 // start left-column
 @use './components/grid' as *;
 @use './components/sideBar' as *;
+=======
+
+// Font 
+* , body{
+     font-family: "Cairo", sans-serif;
+
+
+
+}
+>>>>>>> 2cc7f5eb50658657783a7a1da25e5f80167f0a0c

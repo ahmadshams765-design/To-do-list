@@ -1,4 +1,5 @@
 @use '../abstracts/mixins' as *;
+<<<<<<< HEAD
 @use '../abstracts/variables'  as *;
 
 .side-bar{
@@ -10,6 +11,17 @@
     background-color:  rgb(241 240 247);
     // height: 100%;
     
+=======
+@use './abstracts/variables'  as *;
+
+.side-bar{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 300px;
+    background-color:  rgb(241 240 247);
+    height: 100vh;
+>>>>>>> 2cc7f5eb50658657783a7a1da25e5f80167f0a0c
 
     .side-head{
         margin-bottom: 30px;
@@ -28,8 +40,12 @@
             justify-content: center;
             align-items: flex-start;
             h3{
+<<<<<<< HEAD
                 font-size: 18px;
                 margin-bottom: 10px;
+=======
+                font-size: 20px;
+>>>>>>> 2cc7f5eb50658657783a7a1da25e5f80167f0a0c
             }
             p{
                 margin-top: -10px;
