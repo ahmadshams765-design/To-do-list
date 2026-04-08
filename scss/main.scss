@@ -10,3 +10,6 @@
 //start header
 @use './components/header' as *;
 
+// start left-column
+@use './components/grid' as *;
+@use './components/sideBar' as *;

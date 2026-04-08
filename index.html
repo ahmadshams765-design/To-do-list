@@ -14,22 +14,51 @@
 </head>
 
 <body>
-  <div class="page d-flex">
-    <div class="side-bar">
+  <div class="page d-flex" style="height: 100%;">
+    <div class="side-bar p-5">
       <div class="side-head p-20 d-flex flex-c">
         <div class="logo mr-10 d-flex flex-c">
-          <i class="fa-solid fa-spa t-3xl"></i>
+          <i class="fa-solid fa-spa t-3xl p-5 rad-10"></i>
         </div>
-        <div class="text align-c d-flex " style="flex-direction: column;">
-          <h3 class="m-0">The Workspace</h3>
-          <p class="mt-5 mb-0">Productive Mindset</p>
+        <div class="text" style="flex-direction: column">
+          <h3 class="m-0 t-base">The Workspace</h3>
+          <p class="mt-5 mb-0 t-sm">Productive Mindset</p>
         </div>
       </div>
+
+      <ul class="options">
+        <li>
+          <a href="">
+            <i class="fa-regular fa-circle-check"></i>
+            <span>My Tasks</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa-regular fa-folder-open"></i>
+            <span>Projects</span></a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Calender</span></a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Analytics</span></a>
+        </li>
+      </ul>
+
+      <p class="side-bottom">
+        <i class="fa-solid fa-circle-plus"></i>
+        <span>Quick Add Task</span>
+      </p>
     </div>
 
 
-    <!--############################################################ -->
-    <div class="container">
+    <!--###############################st############################# -->
+    <div class="" style="width: 100%;padding: 50px 200px 50px 50px; background-color: #fbf8fe; ">
       <!-- Header -->
       <header class="header">
         <div class="search-container">
@@ -44,10 +73,14 @@
         <h1>Good Morning, Alex.</h1>
         <p>You have 4 high-priority tasks waiting for your focus today.</p>
         <div class="search-bar">
+          <span class="list-icon"><i class="fa-solid fa-list-check"></i></span>
           <input type="text" placeholder="What is the next meaningful thing to do?">
 
 
-          <button class="today-button">
+
+
+          <!--today , priority & add task buttons -->
+          <button class="today button">
             <div class="calender-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                 fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
                 <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
@@ -58,9 +91,9 @@
             Today
           </button>
 
-          <div class "border-icon"> </div>
 
-          <button class="priority-icon">
+
+          <button class="priority button">
             <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-bookmark" viewBox="0 0 16 16">
                 <path
@@ -72,6 +105,10 @@
           <button class="Add-Task">Add Task</button>
         </div>
       </header>
+
+
+
+
 
       <!-- Dashboard Grid Content -->
       <div class="dashboard-grid">
@@ -93,17 +130,23 @@
 
               <h3>Finalize Q4 Strategic Roadmap</h3>
               <p>Requires deep work focus. Review with design team first.</p>
-              <span>10:30 AM</span>
+              <div class="clock-badge">
+                <span class="clock-icon"><i class="fa-regular fa-clock"></i></span>
+                <span class="time">10:30 AM</span>
+              </div>
             </div>
           </div>
 
           <!-- task card 2-->
-          <div class="tasl card">
+          <div class="task-card">
             <input type="checkbox">
             <div class="task-content">
               <h3>Prepare Sanctuary Pitch Deck</h3>
               <p>Update visual assets and user persona slides.</p>
-              <span class="attachment-count"> 4 Assets</span>
+              <div class="assets">
+                <span class="paperclip-icon"><i class="fa-solid fa-paperclip"></i></span>
+                <span class="attachment-count"> 4 Assets</span>
+              </div>
             </div>
           </div>
 
@@ -113,7 +156,7 @@
           <div class="momentum-card">
             <h3>Weekly Momentum</h3>
             <p>You've completed 82% of your deep work goals this week. Stay intentional.</p>
-            <div><i class="fa-solid fa-arrow-trend-up"></i></div>
+            <div class="TrendArrow-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
           </div>
         </div>
 
@@ -131,15 +174,19 @@
           </header>
 
           <!-- List items -->
-          <ul classs="schedule-item">
+          <ul class="schedule-item">
 
             <!-- task one card -->
             <li>
               <input type="checkbox">
               <div class="task-content">
-                <span>Review team feedback on PR #402</span>
-                <span class="mata-data">MEDIUM Development</span>
-                <div><i class="fa-regular fa-folder"></i></div>
+                <span class="task-title">Review team feedback on PR #402</span>
+                <div class="data">
+                  <span class="level">MEDIUM</span>
+                  <i class="fa-regular fa-folder"></i>
+                  <span>Development</span>
+                </div>
+                <div class="users"></i><i class="fa-regular fa-user"></i></div>
               </div>
             </li>
 
@@ -148,9 +195,12 @@
               <input type="checkbox">
               <div class="task-content">
                 <span class="task-title">Internal branding brainstorm</span>
-                <span class="mata-data">Medium 2:30 PM</span>
-                <div><i class="fa-regular fa-calendar"></i></div>
-                <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                <div class="data">
+                  <span class="level">Medium </span>
+                  <i class="fa-regular fa-calendar"></i>
+                  <span>2:30 PM</span>
+                </div>
+                <div class="vertical-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
               </div>
             </li>
 
@@ -159,16 +209,20 @@
               <input type="checkbox">
               <div class="task-content">
                 <span class="task-title">Update documentation archive</span>
-                <span calss="mata-data">LOW Archive</span>
-                <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                <div class="data">
+                  <span class="level">LOW</span>
+                  <i class="fa-regular fa-folder-closed"></i>
+                  <span>Archive</span>
+                </div>
+                <div class="vertical-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
               </div>
             </li>
           </ul>
 
           <!-- Empty State / Looking ahead-->
-          <div class="empty-state">
-            <div class="placeholder"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-check2-circle" viewBox="0 0 16 16">
+          <div class="looking-ahead">
+            <div class="checkmark-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
                 <path
                   d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
                 <path
@@ -177,13 +231,17 @@
 
             <h3>Looking Ahead</h3>
             <p>You've reached a flow state. No more scheduled tasks for today. Want to plan for tomorrow?</p>
-            <a href="#">View Tomorrow's Schedule</a>
+            <a href="#" class="tomorrow-link">View Tomorrow's Schedule</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+
+  <div class="add-button">
+    <span class="icon"><i class="fa-solid fa-plus"></i></span>
+  </div>
 
 </body>
 

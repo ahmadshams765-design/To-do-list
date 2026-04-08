@@ -1,0 +1,363 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use'../abstracts/colors' as *;
+
+
+
+// @use 'sass:color' as *;
+
+
+
+
+
+
+.dashboard-grid {
+    @include columns(500px);
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.column-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .section-header {
+        margin-bottom: 10px;
+
+        h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: $text-main;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 15px;
+            color: $text-muted;
+            font-size: 0.85rem;
+            cursor: pointer;
+
+            span:hover {
+                color: $purple;
+            }
+        }
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+            @include card-style;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            padding: 15px 20px;
+            border: 1px solid transparent;
+            transition: $transition;
+
+            &:hover {
+                border-color: transparent;
+                transform: translateX(5px);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            input[type="checkbox"] {
+                width: 12px;
+                height: 12px;
+                accent-color: $purple;
+            }
+
+            .task-content {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-items: center;
+
+
+
+                .task-title {
+                    font-size: 0.95rem;
+                    font-weight: 600;
+                    color: $text-main;
+                    flex: 1;
+                }
+            }
+
+            .level {
+                font-size: 0.8rem;
+                font-weight: 700;
+                color: $text-muted;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                min-width: 40px;
+            }
+
+            .data {
+                margin-top: 9px;
+                display: flex;
+                gap: 4px;
+                color: $text-muted;
+                font-size: 0.8rem;
+            }
+
+            .users,
+            .vertical-dots {
+                margin-left: auto;
+                color: #b0b5c9;
+
+                .users {
+                    padding: 5px;
+                    border-radius: 50%;
+                    font-size: 0.75rem;
+                }
+            }
+
+            .vertical-dots {
+                cursor: pointer;
+                padding: 5px;
+
+                &:hover {
+                    color: $purple;
+                }
+            }
+        }
+    }
+
+
+    .looking-ahead {
+        margin-top: 20px;
+        padding: 50px 30px;
+        border: 2px dashed $color-light;
+        border-radius: $radius-lg;
+        background-color: rgba($white, 0.4);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+
+        .checkmark-icon {
+            width: 60px;
+            height: 60px;
+            background-color: $white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: $shadow;
+            margin-bottom: 10px;
+            color: #B2B1BC;
+
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: rgb(94 94 104 / var(--tw-text-opacity, 1));
+            margin: 0;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: $text-muted;
+            max-width: 200px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .tomorrow-link {
+            margin-top: 5px;
+            color: $purple;
+            font-weight: 700;
+            font-size: 0.85rem;
+
+
+
+            &:hover {
+                text-decoration: underline;
+                opacity: 0.8;
+            }
+
+        }
+    }
+}
+
+.column-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fbf8fe;
+}
+
+.section-header {
+    display: flex; //ask
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $text-main;
+}
+
+.badge-high {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(110 5 35 / var(--tw-text-opacity, 1));
+    ;
+    background-color: rgb(249 115 134 / var(--tw-bg-opacity, 1));
+    ;
+    border-radius: 20px;
+    padding: 5px;
+    letter-spacing: 0.5px;
+}
+
+.task-card {
+    @include card-style;
+    display: flex;
+    align-items: flex-start; //ask
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+        border-color: $purple;
+        transform: translateY(-2px);
+        border-color: transparent;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="checkbox"] {
+        margin-top: 1px;
+        accent-color: $purple;
+        height: 12px;
+
+    }
+
+    .task-content {
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: $color-dark;
+            font-weight: 700;
+            font-size: 12px;
+            margin-top: -0.5px;
+        }
+
+        p {
+            font-size: 0.85rem;
+            color: $text-muted;
+            margin-bottom: 12px;
+        }
+
+    }
+
+    .clock-badge {
+        display: inline-flex; //ask
+        align-items: center;
+        gap: 5px;
+        background-color: #f0f2f9;
+        padding: 4px 10px;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        color: $purple;
+        font-weight: bold;
+    }
+
+    .assets {
+        display: inline-flex;
+        align-items: center;
+        background-color: #f0f2f9;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $purple;
+        gap: 5px;
+    }
+}
+
+.momentum-card {
+    background-color: #c5ccff;
+    padding: 25px;
+    border-radius: $radius-lg;
+    position: relative;
+    overflow: hidden;
+    color: #3b3a83;
+
+    h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 0.85rem;
+        max-width: 80%;
+        line-height: 1.5;
+    }
+
+    .TrendArrow-icon {
+        position: absolute;
+        right: 1px;
+        bottom: 1px;
+        font-size: 7rem;
+        opacity: 0.2;
+        transform: rotate(-1deg);
+        color: darken(#3b3a83, 1%);
+    }
+}
+
+
+
+    .add-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: $purple;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: $transition;
+        z-index: 999;
+
+        .icon {
+            color: white;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            background-color: $text-main;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }

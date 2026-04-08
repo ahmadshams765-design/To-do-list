@@ -1,6 +1,7 @@
 @use '../abstracts/mixins' as *;
-@use '../abstracts/variables'  as *;
+@use '../abstracts/variables' as *;
 @use'../abstracts/colors' as *;
+@use "sass:color";
 
 
 // .container{
@@ -10,15 +11,20 @@
 //     background-color: red;
 // }
 
-.header{
+.header {
     margin-bottom: 30px;
+    background-color: #fbf8fe;
+    padding: 10px;
 
-    .search-container{
+
+    .search-container {
         position: relative;
         margin-bottom: 30px;
+
+        margin-top: -40px;
     }
 
-    .search-input{
+    .search-input {
         width: 100%;
         max-width: 400px;
         padding: 10px 15px 10px 40px;
@@ -27,79 +33,116 @@
         background: $color-gray;
     }
 
-    .search-icon{ 
+    .search-icon {
         position: absolute; //ask
         left: 12px;
         top: 8px;
-        color: $text-muted;  // ask
+        color: $text-muted; // ask
     }
 
     //good morning, alex
-    h1{
+    h1 {
         font-size: 2rem;
         font-weight: 700;
         margin: 20px 0 5px;
         color: $text-main;
     }
 
-    p{
+    p {
         color: $text-muted;
         font-size: 0.95rem;
         margin-bottom: 25px;
     }
 
-    .search-bar{
+    .search-bar {
         @include card-style;
         display: flex;
-        gap: 10px;
+        align-items: center;
+        gap: 15px;
         margin-top: 20px;
-        padding:10px 20px; 
+        padding: 5px 5px;
+        min-height: 20px;
+    
 
 
-        input{
-           // flex: 1;
-            border:none;
-            outline: none;
-            font-size: 0.9rem;
-            &::placeholder{
-                color: $text-muted; // needs to be lighten
-            }
-        }
-
-        button.Add-Task{
-            background-color: $purple;
-            color: $white;
+        input {
+            flex: 1;
             border: none;
-            padding: 10px 20px;
-            border-radius: $border-radius-sm;
-            cursor: pointer;
-            font-weight: 600;
-            transition: 0.2s ease;
-            &:hover{
-                opacity: 0.9;
+            outline: none;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            height: 32px;
+            // margin-top: -20px;
+
+
+            &::placeholder {
+                color: lighten($text-muted, 20%);
             }
         }
 
-        .today-button, .priority-icon{
+        .list-icon {
+            color: #545C8C;
+            border: transparent;
+            padding: 5px;
+            background-color: $color-gray;
+            border-radius: $border-radius-sm;
+            font-size: 15px;
+            
+        }
+
+
+        .button {
             display: flex;
             align-items: center;
             gap: 8px;
             background: none;
             border: none;
-            color: rgb(94 94 104 / var(--tw-text-opacity, 1));
+            color: $text-muted;
             font-size: 0.85rem;
-            font-weight: 600;
             cursor: pointer;
             padding: 5px 10px;
+            border-radius: $border-radius-sm;
             transition: $transition;
-            &:hover{
-                color: $purple; 
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.05);
             }
-            svg, div{
+
+            svg,
+            div {
                 display: flex;
                 align-items: center;
-            } //ask
+            }
 
+            &.today {
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 1px;
+                    background-color: #eee;
+                    height: 100%;
+                    left: calc(100% + 5px );
+
+                    // border-right: 1px solid;
+                }
+            }
+        }
+
+
+        button.Add-Task {
+            padding: 10px 20px;
+            border: none;
+            border-radius: $border-radius-sm;
+            cursor: pointer;
+            background: $purple;
+            color: white;
+            font-weight: 600;
+            transition: 0.2s;
+
+            &:hover {
+                opacity: 0.9;
+            }
         }
     }
 }
