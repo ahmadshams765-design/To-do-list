@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Page</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="signup-form">
+                <h1>Start your Journey</h1>
+
+                <input type="text" placeholder="User Name" id="signup-username" required>
+                <input type="password" placeholder="Password" id="signup-password" required>
+                <button>create account</button>
+            </form>
+        </div>
+
+
+        <div class="form-container log-in">
+            <form id="login-form">
+                <h1>Log In</h1>
+                <input type="text" placeholder="User Name" id="login-username" required>
+                <input type="password" placeholder="Password" id="login-password" required>
+                <button>Login</button>
+            </form>
+        </div>
+
+
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Log In</button>
+                </div>
+
+
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Don't Have an account !</p>
+                    <button class="hidden" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <main class="entry-page">
+        <div class="bolt-icon"><i class="fa-solid fa-bolt"></i></div>
+
+        <section class="content">
+            <h1 class="title">
+                <span class="text-grey">MAKE</span>
+                <span class="text-purple">YOUR PROJECT...</span>
+                <span class="text-grey-dark">A GAME</span>
+            </h1>
+        </section>
+
+        <div class="controls">
+            <button class="next-btn">
+                <span>NEXT</span>
+                <span class="arrow">→</span>
+            </button>
+        </div>
+    </main>
+    <script src="login.js"></script>
+
+</body>
+
+</html>

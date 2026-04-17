@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+    <title>Calender</title>
+</head>
+
+<body>
+    <main class="calendar-container">
+        <nav class="top-nav">
+            <div class="nav-left">
+                <span class="brand-name">Sanctuary</span>
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search tasks...">
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="icon-btn"><i class="fa-solid fa-gears"></i></i></button>
+                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                <div class="user-profile">
+                    <i class="fa-solid fa-circle-user user-icon"></i>
+                </div>
+            </div>
+        </nav>
+
+        <header class="calendar-header">
+            <div class="header-titles">
+                <span class="overline">FOCUS VIEW</span>
+                <h1>September 2024</h1>
+                <p>Organize your thoughts and deadlines within the sanctuary of time. Total 12 tasks this month.</p>
+            </div>
+
+            <div class="view-toggles">
+                <button class="toggle-btn">Day</button>
+                <button class="toggle-btn">Week</button>
+                <button class="toggle-btn active">Month</button>
+            </div>
+        </header>
+
+        <div class="calendar-grid">
+            <div class="day-label">MON</div>
+            <div class="day-label">TUE</div>
+            <div class="day-label">WED</div>
+            <div class="day-label">THU</div>
+            <div class="day-label">FRI</div>
+            <div class="day-label">SAT</div>
+            <div class="day-label">SUN</div>
+
+            <div class="calendar-cell muted"><span>26</span></div>
+            <div class="calendar-cell muted"><span>27</span></div>
+            <div class="calendar-cell muted"><span>28</span></div>
+            <div class="calendar-cell muted"><span>29</span></div>
+            <div class="calendar-cell muted"><span>30</span></div>
+            <div class="calendar-cell muted"><span>31</span></div>
+            <div class="calendar-cell">
+                <span>1</span>
+                <div class="event-bar bar-blue"></div>
+            </div>
+
+            <div class="calendar-cell"><span>2</span></div>
+            <div class="calendar-cell">
+                <span>3</span>
+                <div class="event-bar bar-purple"></div>
+                <div class="event-bar bar-blue-light"></div>
+            </div>
+            <div class="calendar-cell">
+                <span>4</span>
+                <div class="event-bar bar-dark"></div>
+            </div>
+            <div class="calendar-cell"><span>5</span></div>
+            <div class="calendar-cell"><span>6</span></div>
+            <div class="calendar-cell"><span>7</span></div>
+            <div class="calendar-cell"><span>8</span></div>
+
+            <div class="calendar-cell current-day">
+                <span class="day-number">9</span>
+                <span class="today-badge">TODAY</span>
+                <div class="event-bar bar-dark"></div>
+                <div class="event-bar bar-blue-light"></div>
+            </div>
+            <div class="calendar-cell"><span>10</span></div>
+            <div class="calendar-cell">
+                <span>11</span>
+                <div class="event-bar bar-pink"></div>
+            </div>
+            <div class="calendar-cell"><span>12</span></div>
+            <div class="calendar-cell">
+                <span>13</span>
+                <div class="event-bar bar-gray"></div>
+            </div>
+            <div class="calendar-cell"><span>14</span></div>
+            <div class="calendar-cell"><span>15</span></div>
+
+            <div class="calendar-cell">
+                <span>16</span>
+                <div class="event-bar bar-purple"></div>
+            </div>
+            <div class="calendar-cell"><span>17</span></div>
+            <div class="calendar-cell">
+                <span>18</span>
+                <div class="event-bar bar-blue-light"></div>
+            </div>
+            <div class="calendar-cell"><span>19</span></div>
+            <div class="calendar-cell"><span>20</span></div>
+            <div class="calendar-cell"><span>21</span></div>
+            <div class="calendar-cell"><span>22</span></div>
+
+            <div class="calendar-cell"><span>23</span></div>
+            <div class="calendar-cell"><span>24</span></div>
+            <div class="calendar-cell"><span>25</span></div>
+            <div class="calendar-cell">
+                <span>26</span>
+                <div class="event-bar bar-blue-light"></div>
+            </div>
+            <div class="calendar-cell"><span>27</span></div>
+            <div class="calendar-cell"><span>28</span></div>
+            <div class="calendar-cell"><span>29</span></div>
+
+            <div class="calendar-cell"><span>30</span></div>
+            <div class="calendar-cell muted"><span>1</span></div>
+            <div class="calendar-cell muted"><span>2</span></div>
+            <div class="calendar-cell muted"><span>3</span></div>
+            <div class="calendar-cell muted"><span>4</span></div>
+            <div class="calendar-cell muted"><span>5</span></div>
+            <div class="calendar-cell muted"><span>6</span></div>
+        </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

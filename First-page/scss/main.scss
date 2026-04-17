@@ -1,0 +1,33 @@
+@use './abstracts/mixins' as *;
+@use './abstracts/variables' as *;
+@use './layout/framework' as *;
+@use './layout/global-rules' as *;
+@use './components/header' as *;
+@use './components/grid' as *;
+@use './components/task-details' as *;
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.side-bar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+}
+
+
+.main-content {
+    margin-left: 250px;
+    width: 100%;
+    min-height: 100vh;
+    margin-left: 10px;
+}
+
+body {
+    margin: 0;
+    background-color: #fbf8fe;
+}
+
+

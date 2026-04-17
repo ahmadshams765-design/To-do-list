@@ -1,10 +1,10 @@
 {
-  "name": "to-do-list",
+  "name": "project-management",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "sass": "sass scss/main.scss CSS/main.css -w"
+    "sass": "sass ./First-page/scss/main.scss  ./First-page/scss/main.css -w"
   },
   "repository": {
     "type": "git",

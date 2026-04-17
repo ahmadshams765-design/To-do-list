@@ -1,0 +1,311 @@
+// Variables
+$primary-purple: #c5ccff;
+$light-blue: #5c6bc0;
+$white: #ffffff;
+$bg-dark: #1a0b3f;
+$text-dark: #333;
+$text-muted: #eee;
+$transition-speed: 0.6s;
+$bg-gradient: linear-gradient(180deg, #ffffff 0%, #f0efff 100%);
+$secondary-purple: #7026ff;
+$light-purple: #bca0ff;
+$grey-text: #a0a0a0;
+$dark-grey-text: #757575;
+
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fbf8fe;
+
+}
+
+.container {
+    background-color: $white;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    z-index: 1;
+    opacity: 0;
+
+    &.appear {
+        z-index: 1000;
+        opacity: 1;
+        transition-delay: 0.3s
+    }
+
+    // Active state for switching between Login/signUp
+    &.active {
+        .log-in {
+            transform: translateX(100%);
+        }
+
+        .sign-up {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+        }
+
+        .toggle-container {
+            transform: translateX(-100%);
+            border-radius: 0 150px 100px 0;
+        }
+
+        .toggle {
+            transform: translateX(50%);
+        }
+
+        .toggle-left {
+            transform: translateX(0);
+        }
+
+        .toggle-right {
+            transform: translateX(200%);
+        }
+    }
+
+    // Common inner elements
+    p {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+        margin: 20px 0;
+    }
+
+    span {
+        font-size: 12px;
+    }
+
+    a {
+        color: $text-dark;
+        font-size: 13px;
+        text-decoration: none;
+        margin: 15px 0 10px;
+    }
+
+    button {
+        background-color: $primary-purple;
+        color: $white;
+        font-size: 12px;
+        padding: 10px 45px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-top: 10px;
+        cursor: pointer;
+
+        &.hidden {
+            background-color: transparent;
+            border-color: $white;
+        }
+    }
+
+    form {
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        height: 100%;
+    }
+
+    input {
+        background-color: $text-muted;
+        border: none;
+        margin: 8px 0;
+        padding: 10px 15px;
+        font-size: 13px;
+        border-radius: 8px;
+        width: 100%;
+        outline: none;
+    }
+}
+
+// Container
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: color $transition-speed ease-in-out;
+}
+
+.log-in {
+    left: 0;
+    width: 50%;
+    z-index: 1;
+    opacity: 1;
+}
+
+.sign-up {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 2;
+}
+
+// Toggle Section
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all $transition-speed ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.toggle {
+    background: linear-gradient(to left, $light-blue, $primary-purple);
+    color: $white;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all $transition-speed ease-in-out;
+}
+
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    // transition: all $transition-speed ease-in-out;
+}
+
+.toggle-left {
+    transform: translateX(-200%);
+}
+
+.toggle-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Black', Gadget, sans-serif; // Closest system font to the bold impact look
+}
+
+// body,
+// html {
+//     height: 100%;
+//     width: 100%;
+//     overflow: hidden;
+// }
+
+.entry-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $bg-gradient;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; // Sits on top initially
+    transition: opacity 0.5s ease, visibility 0.5s;
+
+    &.fade-out {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .bolt-icon {
+        position: absolute;
+        right: 42%;
+        top: 10%;
+        font-size: 60rem;
+        color: $light-purple;
+        opacity: 0.4;
+        transform: rotate(15deg);
+        user-select: none;
+        transform: rotate(-5deg);
+
+    }
+
+    .content {
+        position: absolute;
+        top: 25%;
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            line-height: 0.9;
+            font-weight: 900;
+
+            .text-grey {
+                color: $grey-text;
+                font-size: 8rem;
+            }
+
+            .text-purple {
+                color: $secondary-purple;
+                font-size: 8rem;
+            }
+
+            .text-grey-dark {
+                color: $dark-grey-text;
+                font-size: 5rem;
+            }
+        }
+    }
+
+    .controls {
+        position: absolute;
+        bottom: 50px;
+
+        .next-btn {
+            background: $primary-purple;
+            border: none;
+            color: white;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(112, 38, 255, 0.3);
+
+            span {
+                font-size: 0.7rem;
+                font-weight: bold;
+            }
+
+            .arrow {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

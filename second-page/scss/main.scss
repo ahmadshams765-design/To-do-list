@@ -1,0 +1,324 @@
+@use './abstracts/mixins' as *;
+@use './abstracts/variables' as *;
+
+
+// Brand Colors from Image
+$bg-color: #f7f8fc;
+$primary: #4f5b93;
+$text-main: #3a3f51;
+$text-light: #8e94a7;
+$border: #eef1f6;
+$white: #ffffff;
+
+.dashboard-container {
+    background-color: $bg-color;
+    min-height: 100vh;
+    padding: 0 40px 40px 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+// Global Nav
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+
+    .brand-name {
+        font-size: 20px;
+        font-weight: 600;
+        color: $primary;
+        margin-right: 40px;
+    }
+
+    .search-wrapper {
+        display: inline-flex;
+        align-items: center;
+        background: #eaedf7;
+        padding: 8px 16px;
+        border-radius: 12px;
+
+        i {
+            color: $text-light;
+            margin-right: 10px;
+        }
+
+        input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 220px;
+        }
+    }
+
+    .nav-right {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+
+        .icon-btn {
+            border: none;
+            background: none;
+            font-size: 18px;
+            color: $text-light;
+            cursor: pointer;
+        }
+
+        .user-profile img {
+            border-radius: 8px;
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+// Header Area
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+
+    .overline {
+        font-size: 10px;
+        font-weight: 800;
+        color: #a1a7c0;
+        letter-spacing: 1px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin: 8px 0;
+        color: $text-main;
+    }
+
+    p {
+        color: $text-light;
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .dash-actions {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        .btn-secondary {
+            background: #eaedf7;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: $text-main;
+        }
+
+        .btn-primary {
+            background: $primary;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: $white;
+        }
+    }
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.column-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    h3 {
+        font-size: 14px;
+        color: $text-main;
+        font-weight: 600;
+    }
+
+    .count {
+        color: #a1a7c0;
+        background: #eaedf7;
+        padding: 2px 8px;
+        border-radius: 20px;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    .dot {
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 8px;
+
+        &.todo {
+            background: #b194f4;
+        }
+
+        &.progress {
+            background: #4d8cff;
+        }
+
+        &.done {
+            background: #47c997;
+        }
+    }
+}
+
+// Task Cards
+.task-card {
+    background: $white;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    border: 1px solid #f0f2f8;
+
+    h4 {
+        font-size: 15px;
+        color: $text-main;
+        margin: 15px 0 8px 0;
+        line-height: 1.4;
+    }
+
+    p {
+        font-size: 13px;
+        color: $text-light;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+
+    .card-top {
+        display: flex;
+        justify-content: space-between;
+
+        .drag-handle {
+            color: #d1d5e2;
+            cursor: grab;
+        }
+    }
+
+    .tag {
+        font-size: 9px;
+        font-weight: 800;
+        padding: 4px 10px;
+        border-radius: 6px;
+
+        &.research {
+            background: #f5f0ff;
+            color: #a370ff;
+        }
+
+        &.ui-design {
+            background: #eff4ff;
+            color: #5a8fff;
+        }
+
+        &.dev {
+            background: #edf2ff;
+            color: #5a8fff;
+        }
+
+        &.urgent {
+            background: #fff0f0;
+            color: #ff5a5a;
+        }
+    }
+
+    .card-footer {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid #f8f9fc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .assignee {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+        }
+
+        .comment-count,
+        .due-date {
+            font-size: 12px;
+            color: $text-light;
+            font-weight: 500;
+        }
+
+        .urgent {
+            color: #ff5a5a;
+        }
+    }
+}
+
+
+.card-visual-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 15px;
+
+    .visual-thumb {
+        background: #f0f2f8;
+        height: 60px;
+        border-radius: 6px;
+    }
+}
+
+.progress-bar {
+    background: #f0f2f8;
+    height: 6px;
+    border-radius: 10px;
+    margin-top: 15px;
+
+    .fill {
+        background: #4d8cff;
+        height: 100%;
+        border-radius: 10px;
+    }
+}
+
+
+.card-completed {
+    opacity: 0.6;
+
+    .strikethrough {
+        text-decoration: line-through;
+    }
+
+    .check-icon {
+        color: #47c997;
+        font-size: 18px;
+    }
+
+    .status-date {
+        font-size: 11px;
+        color: $text-light;
+        letter-spacing: 0.5px;
+    }
+}
+
+
+.quick-add{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: $primary;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    box-shadow: 0 8px 20px rgba(79, 91, 147, 0.3);
+    cursor: pointer;
+}

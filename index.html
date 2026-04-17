@@ -1,302 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-<<<<<<< HEAD
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/main.css" />
-  <link rel="stylesheet" href="./css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
-
-  <title>Workspace</title>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <h1>Welcome to my website</h1>
+  <p>This is the home page</p>
 </head>
 
-<body>
-  <div class="page d-flex" style="height: 100%;">
-    <div class="side-bar p-5">
-      <div class="side-head p-20 d-flex flex-c">
-        <div class="logo mr-10 d-flex flex-c">
-          <i class="fa-solid fa-spa t-3xl p-5 rad-10"></i>
-        </div>
-        <div class="text" style="flex-direction: column">
-          <h3 class="m-0 t-base">The Workspace</h3>
-          <p class="mt-5 mb-0 t-sm">Productive Mindset</p>
-        </div>
-      </div>
+<body style="font-size: 35px;">
+  <nav>
+    <a href="First-page/firstpage.html"> first_page</a>
+  </nav>
 
-      <ul class="options">
-        <li>
-          <a href="">
-            <i class="fa-regular fa-circle-check"></i>
-            <span>My Tasks</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-regular fa-folder-open"></i>
-            <span>Projects</span></a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-regular fa-calendar"></i>
-            <span>Calender</span></a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-solid fa-chart-line"></i>
-            <span>Analytics</span></a>
-        </li>
-      </ul>
+  <nav>
+    <a href="second-page/second-page.html">second_page</a>
+  </nav>
 
-      <p class="side-bottom">
-        <i class="fa-solid fa-circle-plus"></i>
-        <span>Quick Add Task</span>
-      </p>
-    </div>
+  <nav>
+    <a href="side-Bar/sideBar.html">side_bar</a>
+  </nav>
+  <nav>
+    <a href="calender/calender.html">Calender</a>
+  </nav>
 
-
-    <!--###############################st############################# -->
-    <div class="" style="width: 100%;padding: 50px 200px 50px 50px; background-color: #fbf8fe; ">
-      <!-- Header -->
-      <header class="header">
-        <div class="search-container">
-          <span class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-search" viewBox="0 0 16 16">
-              <path
-                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-            </svg></span>
-          <input type="text" class="search-input" placeholder="Search tasks or focus areas...">
-        </div>
-
-        <h1>Good Morning, Alex.</h1>
-        <p>You have 4 high-priority tasks waiting for your focus today.</p>
-        <div class="search-bar">
-          <span class="list-icon"><i class="fa-solid fa-list-check"></i></span>
-          <input type="text" placeholder="What is the next meaningful thing to do?">
-
-
-
-
-          <!--today , priority & add task buttons -->
-          <button class="today button">
-            <div class="calender-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
-                <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
-                <path
-                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-              </svg>
-            </div>
-            Today
-          </button>
-
-
-
-          <button class="priority button">
-            <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-bookmark" viewBox="0 0 16 16">
-                <path
-                  d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
-              </svg>
-            </div>
-            Priority
-          </button>
-          <button class="Add-Task">Add Task</button>
-        </div>
-      </header>
-
-
-
-
-
-      <!-- Dashboard Grid Content -->
-      <div class="dashboard-grid">
-
-
-        <!-- Left Column: Critical Focus -->
-        <div class="column-left">
-          <header class="section-header">
-            <h2>Critical Focus</h2>
-            <span class="badge-high">HIGH</span>
-          </header>
-
-
-          <!-- task one card -->
-          <div class="task-card">
-
-            <input type="checkbox">
-            <div class="task-content">
-
-              <h3>Finalize Q4 Strategic Roadmap</h3>
-              <p>Requires deep work focus. Review with design team first.</p>
-              <div class="clock-badge">
-                <span class="clock-icon"><i class="fa-regular fa-clock"></i></span>
-                <span class="time">10:30 AM</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- task card 2-->
-          <div class="task-card">
-            <input type="checkbox">
-            <div class="task-content">
-              <h3>Prepare Sanctuary Pitch Deck</h3>
-              <p>Update visual assets and user persona slides.</p>
-              <div class="assets">
-                <span class="paperclip-icon"><i class="fa-solid fa-paperclip"></i></span>
-                <span class="attachment-count"> 4 Assets</span>
-              </div>
-            </div>
-          </div>
-
-
-
-          <!-- weekly momentum card -->
-          <div class="momentum-card">
-            <h3>Weekly Momentum</h3>
-            <p>You've completed 82% of your deep work goals this week. Stay intentional.</p>
-            <div class="TrendArrow-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-          </div>
-        </div>
-
-
-
-
-        <!-- Right column: scheduled tasks-->
-        <div class="column-right">
-          <header class="section-header">
-            <h2>Scheduled for Today</h2>
-            <div class="filter-options">
-              <span>sort</span>
-              <span>filter</span>
-            </div>
-          </header>
-
-          <!-- List items -->
-          <ul class="schedule-item">
-
-            <!-- task one card -->
-            <li>
-              <input type="checkbox">
-              <div class="task-content">
-                <span class="task-title">Review team feedback on PR #402</span>
-                <div class="data">
-                  <span class="level">MEDIUM</span>
-                  <i class="fa-regular fa-folder"></i>
-                  <span>Development</span>
-                </div>
-                <div class="users"></i><i class="fa-regular fa-user"></i></div>
-              </div>
-            </li>
-
-            <!--task 2 card -->
-            <li>
-              <input type="checkbox">
-              <div class="task-content">
-                <span class="task-title">Internal branding brainstorm</span>
-                <div class="data">
-                  <span class="level">Medium </span>
-                  <i class="fa-regular fa-calendar"></i>
-                  <span>2:30 PM</span>
-                </div>
-                <div class="vertical-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-              </div>
-            </li>
-
-            <!-- task 3 card-->
-            <li>
-              <input type="checkbox">
-              <div class="task-content">
-                <span class="task-title">Update documentation archive</span>
-                <div class="data">
-                  <span class="level">LOW</span>
-                  <i class="fa-regular fa-folder-closed"></i>
-                  <span>Archive</span>
-                </div>
-                <div class="vertical-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-              </div>
-            </li>
-          </ul>
-
-          <!-- Empty State / Looking ahead-->
-          <div class="looking-ahead">
-            <div class="checkmark-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
-                <path
-                  d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
-                <path
-                  d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
-              </svg></div>
-
-            <h3>Looking Ahead</h3>
-            <p>You've reached a flow state. No more scheduled tasks for today. Want to plan for tomorrow?</p>
-            <a href="#" class="tomorrow-link">View Tomorrow's Schedule</a>
-          </div>
-        </div>
-=======
-    <title>Workspace</title>
-  </head>
-  <body>
-    <div class="page d-flex">
-      <div class="side-bar p-5">
-        <div class="side-head p-20 d-flex flex-c">
-          <div class="logo mr-10 d-flex flex-c">
-            <i class="fa-solid fa-spa t-3xl p-5 rad-10"></i>
-          </div>
-          <div class="text" style="flex-direction: column">
-            <h3 class="m-0 t-base">The Workspace</h3>
-            <p class="mt-5 mb-0 t-sm">Productive Mindset</p>
-          </div>
-        </div>
-
-        <ul class="options">
-          <li>
-            <a href="">
-              <i class="fa-regular fa-circle-check"></i>
-              <span>My Tasks</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fa-regular fa-folder-open"></i>
-              <span>Projects</span></a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fa-regular fa-calendar"></i>
-              <span>Calender</span></a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fa-solid fa-chart-line"></i>
-              <span>Analytics</span></a>
-          </li>
-        </ul>
-
-        <p class="side-bottom">
-          <i class="fa-solid fa-circle-plus"></i>
-          <span>Quick Add Task</span>
-        </p>
-      </div>
-<!--############################################################ -->
-      <div class="container">
-        <div class="heading">
-          <h1>TO DO LIST</h1>
-        </div>
-
-       
->>>>>>> 2cc7f5eb50658657783a7a1da25e5f80167f0a0c
-      </div>
-    </div>
-  </div>
-
-
-  <div class="add-button">
-    <span class="icon"><i class="fa-solid fa-plus"></i></span>
-  </div>
-
+  <nav>
+    <a href="Homepage/login-page.html">login-page</a>
+  </nav>
 </body>
 
 </html>
