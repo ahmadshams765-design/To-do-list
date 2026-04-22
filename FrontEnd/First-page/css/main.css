@@ -910,14 +910,14 @@ a {
 }
 
 .column-right .looking-ahead h3 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: rgb(94, 94, 104, var(--tw-text-opacity, 1));
   margin: 0;
 }
 
 .column-right .looking-ahead p {
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   color: #7c829c;
   max-width: 200px;
   line-height: 1.6;
@@ -928,7 +928,7 @@ a {
   margin-top: 5px;
   color: rgb(84, 92, 140, var(--tw-bg-opacity, 1));
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
 }
 
 .column-right .looking-ahead .tomorrow-link:hover {
@@ -1043,26 +1043,27 @@ h2 {
 }
 
 .momentum-card h3 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: 8px;
 }
 
 .momentum-card p {
-  font-size: 0.85rem;
+  font-size: 1.3rem;
   max-width: 80%;
   line-height: 1.5;
 }
 
 .momentum-card .TrendArrow-icon {
   position: absolute;
-  right: 1px;
-  bottom: 1px;
-  font-size: 7rem;
+  right: 1.3px;
+  bottom: 0.1px;
+  top: 1px;
+  font-size: 15rem;
   opacity: 0.2;
   transform: rotate(-1deg);
 }
 
-.add-button {
+.settings-button {
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -1075,10 +1076,10 @@ h2 {
   font-size: 24px;
   box-shadow: 0 8px 20px rgba(79, 91, 147, 0.3);
   cursor: pointer;
-  z-index: 2;
+  z-index: 10;
 }
 
-.add-button .icon {
+.settings-button .icon {
   color: white;
   font-size: 1.7rem;
   display: flex;
@@ -1086,29 +1087,68 @@ h2 {
   justify-content: center;
   position: absolute;
   top: 3px;
-  right: 17px;
+  right: 14px;
   bottom: 5px;
+  z-index: 2;
 }
 
-.add-button:hover {
+.notification-btn,
+.profile-btn {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  color: #5c6bc0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.2px;
+
+
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.settings-button:hover {
   transform: scale(1.1);
   background-color: rgb(49, 50, 59, var(--tw-text-opacity, 1));
 }
 
-.add-button:active {
+.settings-button:active {
   transform: scale(0.95);
 }
+
+
+.settings-button:hover .notification-btn,
+.settings-button:hover .profile-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-110px);
+}
+
+
+
+
+
+
+
 
 .task-details {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
-  z-index: -1000;
+  z-index:-1000;
   display: flex;
   justify-content: flex-end;
   opacity: 0;
   transition: opacity 0.3s ease;
+  
 }
 
 .task-details.is-active {
@@ -1134,16 +1174,18 @@ h2 {
   flex: 2;
   padding: 35px;
   overflow-y: auto;
-  border-right: 1px solid;
+  border-right: none;
   height: 100%;
 }
 
 .task-details .main-content .header-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 25px;
   width: 100%;
+  gap: 10px;
+
 }
 
 .task-details .main-content .header-actions .status-badge {
@@ -1214,7 +1256,7 @@ h2 {
 }
 
 .task-details .main-content .subtask h3 {
-  font-size: 0.75rem;
+  font-size: 1.4rem;
   letter-spacing: 1px;
   color: #b0b5c9;
   margin-bottom: 15px;
@@ -1231,6 +1273,10 @@ h2 {
   align-items: center;
   gap: 12px;
   padding: 4px 0;
+}
+
+.task-details .main-content .subtask .subtask-list .subtask-item .label {
+  font-size: 1.2rem;
 }
 
 .task-details .main-content .subtask .subtask-list .subtask-item input[type=checkbox]:checked+.label {
@@ -1449,7 +1495,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  border-left: 1px solid #f0f2f9;
+  border-left: none;
 }
 
 .task-details .side-panel span {
@@ -1618,10 +1664,8 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: #444;
-  resize: none;
   padding: 10px;
   border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
 .description-section .description-field:focus {
@@ -1696,22 +1740,294 @@ body {
 
 
 .date-dropdown-menu {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    min-width: 140px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 140px;
 }
 
 .date-dropdown-menu input {
-    width: 2px;
-    padding: 1px;
-    border: 1px solid #e0e4f2;
-    border-radius: 6px;
-    font-size: 13px;
-    outline: none;
-    text-align: center;
+  width: 2px;
+  padding: 1px;
+  border: 1px solid #e0e4f2;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  text-align: center;
 }
 
 .date-dropdown-menu input:focus {
-    border-color: #d1c4e9;
+  border-color: #d1c4e9;
+}
+
+.subtask-real-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #c5ccff;
+  border-radius: 8px;
+  background-color: #fbf8fe;
+  font-size: 14px;
+  outline: none;
+}
+
+.subtask-real-input:focus {
+  border-color: #7026ff;
+  box-shadow: 0 0 8px rgba(112, 38, 255, 0.1);
+}
+
+
+
+
+
+/* Modal Overlay (The Background) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Show state for Modal */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* The Profile Card */
+.profile-modal-card {
+  background: white;
+  width: 90%;
+  max-width: 380px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 330px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+/* Card Elements */
+.profile-modal-card h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.avatar-wrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #7026ff;
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-btn {
+  display: block;
+  margin: 0 auto 20px;
+  background: #f0efff;
+  border: none;
+  color: #7026ff;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 10px;
+  color: #aaa;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  background: #fafafa;
+  outline: none;
+}
+
+.save-modal-btn {
+  width: 100%;
+  background: #7026ff;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 3. The Profile Card */
+.profile-modal-card {
+  background: white;
+  width: 90%;
+  max-width: 380px;
+  padding: 35px;
+  border-radius: 30px;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+.modal-overlay.active .profile-modal-card {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+/* Notification Card Specific Styling */
+.notification-modal-card {
+  background: white;
+  width: 90%;
+  max-width: 420px;
+  max-height: 80vh;
+  padding: 0;
+  border-radius: 25px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-overlay.active .notification-modal-card {
+  opacity: 1;
+}
+
+/* Header */
+.notif-header {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.notif-header h2 {
+  font-size: 1.2rem;
+  color: #333;
+  position: absolute;
+  left: 159px;
+}
+
+#notif-close.close-modal {
+  position: absolute;
+  right: 380px;
+}
+
+.mark-all-btn {
+  background: none;
+  border: none;
+  color: #7026ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
+
+/* List Area */
+.notif-list {
+  padding: 10px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 8px;
+  transition: 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.notif-item:hover {
+  background: #f8f7ff;
+}
+
+.notif-item.unread {
+  background: #f1ecff;
+}
+
+
+
+/* Text Content */
+.notif-info {
+  flex-grow: 1;
+  padding-right: 10px;
+}
+
+.notif-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #444;
+}
+
+.notif-time {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 5px;
+  display: block;
+}
+
+.unread-dot {
+  width: 8px;
+  height: 8px;
+  background: #7026ff;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }

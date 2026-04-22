@@ -1,5 +1,5 @@
 .side-bar {
-  width: 260px;
+  width: 230px;
   height: 100vh;
   background-color: #f8f9fc;
   padding: 30px 20px;
@@ -37,27 +37,36 @@
   margin: 0;
   flex-grow: 1;
 }
-.side-bar .options li {
-  margin-bottom: 8px;
-}
-.side-bar .options li a {
+.side-bar .options .nav-item {
   display: flex;
   align-items: center;
-  text-decoration: none;
+  cursor: pointer;
   padding: 12px 16px;
   border-radius: 12px;
   color: #8e94a7;
   font-weight: 500;
   transition: all 0.2s ease;
   gap: 15px;
+  margin-bottom: 8px;
+  text-decoration: none; /* In case you use <a> tags */
 }
-.side-bar .options li a i {
+
+.side-bar .options .nav-item i {
   font-size: 18px;
 }
-.side-bar .options li a:hover {
-  background-color: rgba(224, 228, 242, 0.5);
+
+.side-bar .options .nav-item span {
+  font-size: 14px;
 }
-.side-bar .options li.active a {
+
+/* Hover State */
+.side-bar .options .nav-item:hover {
+  background-color: rgba(224, 228, 242, 0.5);
+  color: #4f5b93;
+}
+
+/* Active State */
+.side-bar .options .nav-item.active {
   background-color: #e0e4f2;
   color: #4f5b93;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
@@ -84,4 +93,4 @@
 }
 .side-bar .side-bottom i {
   font-size: 18px;
-}/*# sourceMappingURL=sideBar.css.map */
+}

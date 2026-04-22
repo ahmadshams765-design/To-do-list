@@ -266,3 +266,23 @@
   box-shadow: 0 8px 20px rgba(79, 91, 147, 0.3);
   cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
+
+.layout {
+    display: flex; 
+    min-height: 100vh;
+    width: 100%;
+}
+
+#sidebar-container {
+    width: 260px; 
+    flex-shrink: 0;
+}
+
+.dashboard-container {
+    flex: 1; 
+    background-color: #fafafa;
+    min-height: 100vh;
+    padding: 0 40px 40px 40px;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}

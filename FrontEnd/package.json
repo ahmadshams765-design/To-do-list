@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "sass": "sass ./First-page/scss/main.scss  ./First-page/scss/main.css -w"
+    "sass": "sass ./First-page/scss/main.scss  ./First-page/css/main.css -w"
   },
   "repository": {
     "type": "git",

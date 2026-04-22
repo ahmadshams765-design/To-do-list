@@ -27,7 +27,7 @@
                     </div>
 
                     <h1>Good Morning, Alex.</h1>
-                    <p>You have <span id="task-count">4</span> high-priority tasks waiting for your focus today.</p>
+                    <p>You have <span id="task-count">4</span> tasks waiting for your focus today.</p>
                     <div class="search-bar">
                         <span class="list-icon"><i class="fa-solid fa-list-check"></i></span>
                         <input type="text" placeholder="What is the next meaningful thing to do?">
@@ -129,10 +129,94 @@
                         </div>
                     </div>
 
-                    <div class="add-button">
-                        <span class="icon"><i class="fa-solid fa-plus"></i></span>
+                    <div class="settings-button">
+                        <span class="icon"><i class="fa-solid fa-gears"></i></span>
+                        <div class="notification-btn"><i class="fa-regular fa-bell"></i></div>
+                        <div class="profile-btn"><i class="fa-solid fa-circle-user user-icon"></i></div>
                     </div>
 
+
+                    <!-- Profile Modal Overlay -->
+                    <div class="modal-overlay" id="profileModal">
+                        <div class="profile-modal-card">
+                            <button class="close-modal"><i class="fa-solid fa-xmark close-btn"></i></button>
+
+                            <h2>Profile Settings</h2>
+
+                            <div class="avatar-section">
+                                <div class="avatar-wrapper">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                        id="modal-profile-img">
+                                </div>
+                                <input type="file" id="modal-image-upload" hidden accept="image/*">
+                                <button class="upload-btn"
+                                    onclick="document.getElementById('modal-image-upload').click()">
+                                    <i class="fa-solid fa-camera"></i> Change Photo
+                                </button>
+                            </div>
+
+                            <form id="modal-profile-form">
+                                <div class="form-group">
+                                    <label>USERNAME</label>
+                                    <input type="text" id="modal-username-field">
+                                </div>
+                                <div class="form-group">
+                                    <label>NEW PASSWORD</label>
+                                    <input type="password" id="modal-new-pass" placeholder="Enter new password">
+                                </div>
+                                <div class="form-group">
+                                    <label>CONFIRM PASSWORD</label>
+                                    <input type="password" id="modal-confirm-pass" placeholder="Confirm new password">
+                                </div>
+                                <button type="submit" class="save-modal-btn">Save Changes</button>
+                            </form>
+                            <p id="modal-status-msg"></p>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Notification Modal Overlay -->
+                    <div class="modal-overlay" id="notificationModal">
+                        <div class="notification-modal-card">
+                            <button class="close-modal" id="notif-close"><i class="fa-solid fa-xmark"></i></button>
+
+                            <div class="notif-header">
+                                <h2>Notifications</h2>
+                                <button class="mark-all-btn">Mark all as read</button>
+                            </div>
+
+                            <div class="notif-list">
+                                <!-- Notification Item 1 (Unread) -->
+                                <div class="notif-item unread">
+                                    <div class="notif-info">
+                                        <p class="notif-text">High Priority: Finalize Q4 Strategy
+                                            is due in 2 hours!</p>
+                                        <span class="notif-time">Just now</span>
+                                    </div>
+                                    <div class="unread-dot"></div>
+                                </div>
+
+                                <!-- Notification Item 2 -->
+                                <div class="notif-item">
+                                    <div class="notif-info">
+                                        <p class="notif-text">You completed 82% of your weekly
+                                            goals. Great job!</p>
+                                        <span class="notif-time">5 hours ago</span>
+                                    </div>
+                                </div>
+
+                                <!-- Notification Item 3 -->
+                                <div class="notif-item">
+                                    <div class="notif-info">
+                                        <p class="notif-text">System update completed successfully.</p>
+                                        <span class="notif-time">Yesterday</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -156,16 +240,12 @@
                                 <span class="dot-icon"><i class="fa-solid fa-circle"></i></span>
                                 <span class="progress">In Progress</span>
                             </div>
-                            <div class="actions-icons">
-                                <i class="fa-solid fa-share-nodes"></i>
-                                <i class="fa-solid fa-ellipsis"></i>
-                            </div>
                         </header>
 
                         <div class="task-title">
                             <h1>Finalize Architectural Strategy for Oasis App</h1>
                             <div class="description-section">
-                                <textarea class="description-filed"
+                                <textarea class="description-field"
                                     placeholder="Add a more detailed description about this task..."></textarea>
                                 <p id="description"> </p>
                             </div>
@@ -174,85 +254,23 @@
                         <div class="subtask">
                             <h3>SUBTASKS</h3>
                             <div class="subtask-list">
-                                <div class="subtask-item">
-                                    <input type="checkbox" id="st1">
-                                    <label class="label" for="st1">Define database schema for user profiles</label>
+
+
+                                <div id="subtask-input-wrapper" style="display: none; margin-bottom: 10px;">
+                                    <input type="text" id="subtask-input-field" class="subtask-real-input"
+                                        placeholder="What needs to be done?">
                                 </div>
-                                <div class="subtask-item">
-                                    <input type="checkbox" id="st2">
-                                    <label class="label" for="st2">Select cloud hosting provider</label>
-                                </div>
-                                <div class="subtask-item">
-                                    <input type="checkbox" id="st3">
-                                    <label class="label" for="st3">
-                                        Draft API documentation for authentication module
-                                    </label>
-                                </div>
+
 
                                 <div class="add-subtask-btn">
                                     <i class="fa-solid fa-plus"></i> Add Subtask
                                 </div>
                             </div>
                         </div>
-
-                        <section class="attachments-section">
-                            <h3>ATTACHMENTS</h3>
-                            <div class="attachment-grid">
-                                <div class="attachment-card">
-                                    <div class="file-icon"><i class="fa-regular fa-file-lines"></i></div>
-                                    <div class="file-info">
-                                        <span class="file-name">App_Flow_...</span>
-                                        <span class="file-date-size">2.4 MB • Oct 24</span>
-                                    </div>
-                                </div>
-                                <div class="attachment-card">
-                                    <div class="file-icon"><i class="fa-regular fa-image"></i></div>
-                                    <div class="file-info">
-                                        <span class="file-name">Design_Sy...</span>
-                                        <span class="file-date-size">850 KB • Oct 25</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-
-                        <section class="comments-section">
-                            <h3>COMMENTS THREAD</h3>
-                            <div class="comment-view">
-                                <div class="user-icon">
-                                    <i class="fa-solid fa-user-tie"></i>
-                                </div>
-                                <div class="message">
-                                    <div class="comment-header">
-                                        <span class="user-name">shams</span>
-                                        <span class="comment-time">2h ago</span>
-                                    </div>
-                                    <p>hello, world</p>
-                                </div>
-                            </div>
-
-                            <div class="comment-input">
-                                <input type="text" placeholder="Write a comment...">
-                                <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
-                            </div>
-                        </section>
                     </main>
 
 
                     <div class="side-panel">
-                        <div class="uploader-info">
-                            <span>ASSIGNEE</span>
-                            <div class="uploader-pill">
-                                <div class="user-icon">
-                                    <i class="fa-solid fa-user-gear"></i>
-                                </div>
-                                <div class="uploader-text">
-                                    <span class="uploader-name">Shams</span>
-                                    <span class="uploader-role">Fahl</span>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="upload-date">
                             <span>DUE DATE</span>
                             <div class="date-display">
@@ -268,15 +286,6 @@
                                 <span class="urgent">Urgent</span>
                             </div>
                         </div>
-
-                        <div class="tags">
-                            <span>TAGS</span>
-                            <div class="tags-container">
-                                <span class="tag">PRODUCT</span>
-                                <span class="tag">DEV</span>
-                            </div>
-                        </div>
-
                         <button class="mark-done-btn">
                             <i class="fa-regular fa-circle-check"></i>
                             <span class="done">Mark as Done</span>

@@ -26,6 +26,7 @@ const loginForm = document.getElementById("login-form");
 
 // sign-up section
 signupForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
     const username = document.getElementById("signup-username").value.trim();
     const password = document.getElementById("signup-password").value.trim();
 
@@ -59,7 +60,6 @@ signupForm.addEventListener("submit", async (e) => {
         console.log(error);
         alert("server error!");
     }
-
 });
 
 
