@@ -364,7 +364,7 @@ const createNewTask = () => {
                 <div class="data">
                     <span class="level">${selectedPriority}</span>
                     <span class="clock-icon"><i class="fa-regular fa-clock"></i></span>
-                    <span>${timeSrting}</span>
+                    <span class="time">${timeSrting}</span>
                 </div>
             </div>
     `;
@@ -455,6 +455,12 @@ async function loadProfileData() {
         profileImg.src = data.profilePic;
 
         greetingName.textContent = `Good Morning, ${data.username}.`;
+
+        // 🔥 SAVE TO LOCAL STORAGE
+        localStorage.setItem("currentUser", JSON.stringify({
+            username: data.username,
+            profilePic: data.profilePic
+        }));
 
     } catch (err) {
         alert("server error!");

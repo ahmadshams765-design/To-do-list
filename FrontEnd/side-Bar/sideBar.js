@@ -1,46 +1,143 @@
-// // تأكد إن الصفحة اتحمّلت
-// document.addEventListener("DOMContentLoaded", () => {
+// ================== STATE ==================
+let projects = JSON.parse(localStorage.getItem("projects")) || [];
+let activeProjectId = localStorage.getItem("activeProjectId");
 
-//     // كل عناصر الـ nav
-//     const navItems = document.querySelectorAll(".nav-item");
+// ================== INIT ==================
+document.addEventListener("DOMContentLoaded", initSidebar);
 
-//     navItems.forEach(item => {
-//         item.addEventListener("click", () => {
+function initSidebar() {
+    waitForSidebar();
+    bindActiveNav();
+    renderProjects();
+}
 
-//             // 1. إزالة active من الكل
-//             navItems.forEach(i => i.classList.remove("active"));
+// ================== SAFE INIT (handles dynamic loading) ==================
+function waitForSidebar() {
+    const interval = setInterval(() => {
+        const btn = document.querySelector(".side-bottom");
+        const modal = document.getElementById("project-modal");
 
-//             // 2. إضافة active للعنصر الحالي
-//             item.classList.add("active");
+        if (btn && modal) {
+            clearInterval(interval);
+            bindModal();
+        }
+    }, 100);
+}
 
-//             // 3. الانتقال للصفحة
-//             const link = item.getAttribute("data-link");
-//             if (link) {
-//                 window.location.href = link;
-//             }
-//         });
-//     });
+// ================== MODAL ==================
+function bindModal() {
+    const btn = document.querySelector(".side-bottom");
+    const modal = document.getElementById("project-modal");
+    const closeBtn = document.getElementById("close-project-modal");
+    const createBtn = document.getElementById("confirm-add-project");
 
+    const titleInput = document.getElementById("proj-title");
+    const descInput = document.getElementById("proj-desc");
 
-//     // ✨ optional: تحديد الصفحة الحالية تلقائيًا
-//     const currentPath = window.location.pathname;
+    let selectedUsers = [];
 
-//     navItems.forEach(item => {
-//         const link = item.getAttribute("data-link");
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = "true";
 
-//         if (link && currentPath.includes(link.split("/").pop())) {
-//             item.classList.add("active");
-//         }
-//     });
+    // OPEN MODAL
+    btn.addEventListener("click", () => {
+        modal.classList.add("is-visible");
+    });
 
+    // CLOSE MODAL
+    function closeModal() {
+        modal.classList.remove("is-visible");
+        titleInput.value = "";
+        descInput.value = "";
+        selectedUsers = [];
+    }
 
-//     // ✨ زر إنشاء مشروع جديد
-//     const createProjectBtn = document.querySelector(".side-bottom");
+    closeBtn?.addEventListener("click", closeModal);
 
-//     if (createProjectBtn) {
-//         createProjectBtn.addEventListener("click", () => {
-//             alert("Create New Project feature coming soon 🚀");
-//         });
-//     }
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+    });
 
-// });
+    // CREATE PROJECT
+    createBtn?.addEventListener("click", () => {
+        const name = titleInput.value.trim();
+
+        if (!name) {
+            alert("Project title required");
+            return;
+        }
+
+        const project = {
+            id: Date.now(),
+            name,
+            description: descInput.value,
+            tasks: [],
+            collaborators: selectedUsers
+        };
+
+        projects.push(project);
+        saveProjects();
+
+        setActiveProject(project.id);
+
+        closeModal();
+        renderProjects();
+    });
+}
+
+// ================== STORAGE ==================
+function saveProjects() {
+    localStorage.setItem("projects", JSON.stringify(projects));
+}
+
+// ================== ACTIVE PROJECT ==================
+function setActiveProject(id) {
+    activeProjectId = id;
+    localStorage.setItem("activeProjectId", id);
+}
+
+// ================== RENDER PROJECTS ==================
+function renderProjects() {
+    const container = document.querySelector(".options");
+    if (!container) return;
+
+    // remove old projects only
+    document.querySelectorAll(".project-item").forEach(el => el.remove());
+
+    projects.forEach(project => {
+        const a = document.createElement("a");
+        a.href = "#";
+        a.className = "nav-item project-item";
+
+        if (project.id == activeProjectId) {
+            a.classList.add("active");
+        }
+
+        a.innerHTML = `
+            <i class="fa-regular fa-folder"></i>
+            <span>${project.name}</span>
+        `;
+
+        a.addEventListener("click", (e) => {
+            e.preventDefault();
+            setActiveProject(project.id);
+            renderProjects();
+
+            console.log("Active project:", project);
+        });
+
+        container.appendChild(a);
+    });
+}
+
+// ================== NAV ACTIVE STATE ==================
+function bindActiveNav() {
+    const links = document.querySelectorAll(".side-bar .nav-item");
+
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            links.forEach(l => l.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+}

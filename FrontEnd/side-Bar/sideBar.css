@@ -1,5 +1,5 @@
 .side-bar {
-  width: 230px;
+  width: 205px;
   height: 100vh;
   background-color: #f8f9fc;
   padding: 30px 20px;
@@ -94,3 +94,74 @@
 .side-bar .side-bottom i {
   font-size: 18px;
 }
+
+
+
+/* Project Modal Specifics */
+.project-modal-content {
+    width: 500px; /* Slightly wider for description */
+}
+
+.project-modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    resize: none;
+}
+
+/* Collaborator Search */
+.collab-search-container {
+    position: relative;
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.search-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-item:hover {
+    background: #f0f2f9;
+}
+
+/* Chips/Tags */
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.chip {
+    background: #e0e4f5;
+    color: #4f5b93;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chip i {
+    cursor: pointer;
+    font-size: 12px;
+}
+

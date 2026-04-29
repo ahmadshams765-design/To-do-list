@@ -45,7 +45,42 @@
         </div>
     </div>
 
+
+    <!-- Create Project Modal -->
+    <div class="task-modal-overlay" id="project-modal">
+        <div class="task-modal-content project-modal-content">
+            <h2>Create New Project</h2>
+
+            <div class="input-group">
+                <label>Project Title</label>
+                <input type="text" id="proj-title" placeholder="e.g., Oasis Mobile App">
+            </div>
+
+            <div class="input-group">
+                <label>Description</label>
+                <textarea id="proj-desc" placeholder="Briefly describe the project goals..." rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>Add Collaborators</label>
+                <div class="collab-search-container">
+                    <input type="text" id="collab-search" placeholder="Search by username (e.g. john, sara)">
+                    <div id="search-results" class="search-dropdown"></div>
+                </div>
+                <div id="selected-collabs" class="chips-container">
+                    <!-- Chips will appear here -->
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="cancel-btn" id="close-project-modal">Cancel</button>
+                <button class="create-btn" id="confirm-add-project">Create Project</button>
+            </div>
+        </div>
+    </div>
+
     <script src="./sideBar.js"></script>
+    <script src="./projects.js"></script>
 </body>
 
 </html>
