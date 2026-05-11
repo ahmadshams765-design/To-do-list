@@ -15,13 +15,16 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+    @Column(columnDefinition = "LONGTEXT")
+private String profilePic;
 
-    // GETTERS
+    public String getProfilePic() { return profilePic; }
+    public void setProfilePic(String profilePic) { this.profilePic = profilePic; }
+
     public Long getId() { return id; }
     public String getUsername() { return username; }
     public String getPassword() { return password; }
 
-    // SETTERS
     public void setId(Long id) { this.id = id; }
     public void setUsername(String username) { this.username = username; }
     public void setPassword(String password) { this.password = password; }
